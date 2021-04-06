@@ -19,7 +19,7 @@ import Header from '../components/Header';
 import ChatList from '../components/ChatList';
 import { mapState } from 'vuex';
 
-import { bus } from '../event-bus';
+//import { bus } from '../event-bus';
 
 //const bus = new Vue();
 // 이벤트 버스의 경우, 이벤트 상속으로 인한 복잡한 형태 대신 이벤트 시작점과 부모를 간단하게
@@ -57,7 +57,7 @@ export default {
         // spread 연산자 ... 
         ...mapState({
             // 아래 두 내용은 동일
-            chatList: state => state.chatList
+            chatList: state => state.module3.chatList
             //chatList: 'chatList'
             // 함수로도 설정 가능
             // chatlist(state) {
@@ -70,15 +70,15 @@ export default {
     },
     methods: {
         // 메시지 체크 이후 갯수
-        readChatItem(chatItem) {
-            this.chatList.filter(item => item.id === chatItem.id)[0].new = 0;
-        }
+        // readChatItem(chatItem) {
+        //     this.chatList.filter(item => item.id === chatItem.id)[0].new = 0;
+        // }
     },
-    created() {
-        bus.$on('CHAT_CLICK', chat => {
-            this.readChatItem(chat);
-        });
-    },
+    // created() {
+    //     bus.$on('CHAT_CLICK', chat => {
+    //         this.readChatItem(chat);
+    //     });
+    // },
     components: {
         Header,
         ChatList,

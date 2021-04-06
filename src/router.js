@@ -5,6 +5,7 @@ import About from './views/About';
 import Attribute from './views/Attribute';
 import Todo from './views/Todo';
 import State from './views/State';
+import Modules from './views/Modules'
 
 // router를 사용하기 위한 use
 Vue.use(VueRouter);
@@ -18,6 +19,7 @@ const router =  new VueRouter({
         {path: '/attr', component: Attribute},
         {path: '/todo', component: Todo},
         {path: '/state', component: State},
+        {path: '/module', component: Modules},
     ]
 });
 
